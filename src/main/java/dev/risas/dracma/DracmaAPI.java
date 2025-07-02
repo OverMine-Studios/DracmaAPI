@@ -1,64 +1,15 @@
 package dev.risas.dracma;
 
-import org.bukkit.plugin.IllegalPluginAccessException;
+public final class DracmaAPI {
 
-import java.util.UUID;
+    private static DracmaService service;
 
-/**
- * Created by Risas
- * Project: Dracma
- * Date: 10-01-2023
- * Twitter: @RisasDev
- * GitHub: https://github.com/RisasDev
- */
-
-public class DracmaAPI {
-
-    public DracmaAPI() {
-        throw new IllegalPluginAccessException("API is not registered");
+    public static void register(DracmaService instance) {
+        service = instance;
     }
 
-    public int getCurrency(String userName, String currency) {
-        throw new IllegalPluginAccessException("API is not registered");
-    }
-
-    public int getCurrency(UUID uuid, String currency) {
-        throw new IllegalPluginAccessException("API is not registered");
-    }
-
-    public void setCurrency(String userName, String currencyName, int currencyAmount) {
-        throw new IllegalPluginAccessException("API is not registered");
-    }
-
-    public void setCurrency(UUID uuid, String currencyName, int currencyAmount) {
-        throw new IllegalPluginAccessException("API is not registered");
-    }
-
-    public void addCurrency(String name, String currencyName, int currencyAmount) {
-        throw new IllegalPluginAccessException("API is not registered");
-    }
-
-    public void addCurrency(UUID uuid, String currencyName, int currencyAmount) {
-        throw new IllegalPluginAccessException("API is not registered");
-    }
-
-    public void removeCurrency(String name, String currencyName, int currencyAmount) {
-        throw new IllegalPluginAccessException("API is not registered");
-    }
-
-    public void removeCurrency(UUID uuid, String currencyName, int currencyAmount) {
-        throw new IllegalPluginAccessException("API is not registered");
-    }
-
-    public boolean isGlobalDiscount() {
-        throw new IllegalPluginAccessException("API is not registered");
-    }
-
-    public void setGlobalDiscount(int globalDiscount) {
-        throw new IllegalPluginAccessException("API is not registered");
-    }
-
-    public int getGlobalDiscount() {
-        throw new IllegalPluginAccessException("API is not registered");
+    public static DracmaService get() {
+        if (service == null) throw new IllegalStateException("DracmaAPI no está registrado.");
+        return service;
     }
 }
