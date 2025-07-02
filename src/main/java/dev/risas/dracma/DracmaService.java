@@ -16,6 +16,7 @@ public interface DracmaService {
     void addCurrency(UUID uuid, String currency, int amount);
     void addCurrency(String name, String currency, int amount);
     void removeCurrency(UUID uuid, String currency, int amount);
+    void removeCurrency(String name, String currency, int amount);
 
     boolean isGlobalDiscount();
     int getGlobalDiscount();
